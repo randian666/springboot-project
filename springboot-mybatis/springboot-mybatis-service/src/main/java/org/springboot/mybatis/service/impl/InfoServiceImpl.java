@@ -4,7 +4,6 @@ import org.springboot.mybatis.domain.Info;
 import org.springboot.mybatis.mapper.InfoMapper;
 import org.springboot.mybatis.service.InfoService;
 
-import javax.annotation.Resource;
 import java.util.List;
 
 /**
