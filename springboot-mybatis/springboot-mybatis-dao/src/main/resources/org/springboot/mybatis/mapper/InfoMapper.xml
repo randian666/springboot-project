@@ -15,7 +15,7 @@
         age
     </sql>
 
-    <resultMap id="infoP" type="info" >
+    <resultMap id="infoP" type="Info" >
         <id  column="id" property="id" />
         <result column="name" property="name" />
         <result column="sex" property="sex" />
@@ -28,6 +28,6 @@
     <select id="get" resultMap="infoP">
         SELECT
         <include refid="Column_list" />
-        FROM info
+        from info
     </select>
 </mapper>
