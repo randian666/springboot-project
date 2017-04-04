@@ -97,7 +97,11 @@ public class MyBatisConfig implements EnvironmentAware {
     public PlatformTransactionManager transactionManager() throws SQLException {
         return new DataSourceTransactionManager(dataSource());
     }
-//    druid 开启监控
+    /**
+     * http://localhost/druid/login.html
+     * druid 开启监控
+     * @return
+     */
     @Bean
     public ServletRegistrationBean druidServlet() {
         ServletRegistrationBean reg = new ServletRegistrationBean();
