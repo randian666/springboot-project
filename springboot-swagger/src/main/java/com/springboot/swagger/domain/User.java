@@ -3,14 +3,6 @@ package com.springboot.swagger.domain;
 /**
  * Created by liuxun on 2017/3/21.
  */
-
-/**
- *
- * @author 程序猿DD
- * @version 1.0.0
- * @blog http://blog.didispace.com
- *
- */
 public class User {
 
     private Long id;

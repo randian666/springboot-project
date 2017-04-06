@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.*;
 
 /**
+ * RESTful 风格接口
  * Created by liuxun on 2017/3/21.
  */
 @RestController
