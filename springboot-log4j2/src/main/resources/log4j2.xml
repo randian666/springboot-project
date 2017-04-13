@@ -34,12 +34,14 @@
         <Async name="Async">
             <appender-ref ref="RollingFileInfo" />
             <appender-ref ref="RollingFileError" />
-            <appender-ref ref="log"/>
             <appender-ref ref="Console"/>
+            <appender-ref ref="log"/>
         </Async>
     </Appenders>
+
     <Loggers>
         <Root level="info">
+            <!--异步日志-->
             <appender-ref ref="Async" />
         </Root>
     </Loggers>
