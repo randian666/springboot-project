@@ -40,7 +40,8 @@
     </Appenders>
 
     <Loggers>
-        <Root level="info">
+        <Logger name="com.springboot" level="INFO"/>
+        <Root level="error">
             <!--异步日志-->
             <appender-ref ref="Async" />
         </Root>

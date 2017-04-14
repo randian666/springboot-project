@@ -15,8 +15,8 @@ public class Application extends SpringBootServletInitializer{
 		return application.sources(Application.class);
 	}
 	public static void main(String[] args) {
-		LOGGER.error("Application begining");
+		LOGGER.info("Application begining");
 		SpringApplication.run(Application.class, args);
-		LOGGER.error("Application ending");
+		LOGGER.info("Application ending");
 	}
 }
