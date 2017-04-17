@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="springboot-cloud:war">
+    <output-path>$PROJECT_DIR$/springboot-cloud/target</output-path>
+    <root id="archive" name="springboot-cloud-1.5.2.RELEASE.war">
+      <element id="artifact" artifact-name="springboot-cloud:war exploded" />
+    </root>
+  </artifact>
+</component>

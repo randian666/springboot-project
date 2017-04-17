@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestParam;
  * 消费者服务
  * Created by liuxun on 2017/4/17.
  */
-@FeignClient("compute-service")
+@FeignClient(value = "compute-service",fallback = ComputeClientHystrix.class)
 public interface ConsumerClient {
 
     @RequestMapping(method = RequestMethod.GET, value = "/add")
