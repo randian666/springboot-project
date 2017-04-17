@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
+ * 创建提供服务
  * Created by liuxun on 2017/4/17.
  */
 @RestController
@@ -18,9 +19,20 @@ public class ComputeController {
     private DiscoveryClient client;
     @RequestMapping(value = "/add" ,method = RequestMethod.GET)
     public Integer add(@RequestParam Integer a, @RequestParam Integer b) {
-        ServiceInstance instance = client.getLocalServiceInstance();
+        ServiceInstance instance = client.getLocalServiceInstance();//获取服务信息
         Integer r = a + b;
+        System.out.println("result:"+r);
         System.out.println("/add, host:" + instance.getHost() + ", service_id:" + instance.getServiceId() + ", result:" + r);
+        return r;
+    }
+
+
+    @RequestMapping(value = "/subtract" ,method = RequestMethod.GET)
+    public Integer subtract(@RequestParam Integer a, @RequestParam Integer b) {
+        ServiceInstance instance = client.getLocalServiceInstance();//获取服务信息
+        Integer r = a - b;
+        System.out.println("result:"+r);
+        System.out.println("/subtract, host:" + instance.getHost() + ", service_id:" + instance.getServiceId() + ", result:" + r);
         return r;
     }
 }

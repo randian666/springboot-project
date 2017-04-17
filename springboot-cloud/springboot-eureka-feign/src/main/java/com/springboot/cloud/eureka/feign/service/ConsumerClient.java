@@ -6,11 +6,16 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 /**
+ * 消费者服务
  * Created by liuxun on 2017/4/17.
  */
 @FeignClient("compute-service")
 public interface ConsumerClient {
 
     @RequestMapping(method = RequestMethod.GET, value = "/add")
-    String test(@RequestParam("a") Integer a, @RequestParam("b") Integer b);
+    String addClient(@RequestParam("a") Integer a, @RequestParam("b") Integer b);
+
+
+    @RequestMapping(method = RequestMethod.GET, value = "/subtract")
+    String subtractClient(@RequestParam("a") Integer a, @RequestParam("b") Integer b);
 }
