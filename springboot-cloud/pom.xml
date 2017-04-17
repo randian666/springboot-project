@@ -11,6 +11,8 @@
     <packaging>pom</packaging>
     <modules>
         <module>springboot-eureka-server</module>
+        <module>springboot-eureka-provider</module>
+        <module>springboot-eureka-feign</module>
     </modules>
     <artifactId>springboot-cloud</artifactId>
 
