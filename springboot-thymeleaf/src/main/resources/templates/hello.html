@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Hello World!</title>
+</head>
+<body>
+<h1 th:inline="text">Hello.v.2</h1>
+<p>1.获取变量值</p>
+<p th:text="${hello}"></p>
+<p>2.引入url</p>
+<p><a th:href="@{http://www.baidu.com}">引入url</a></p>
+<p>3.字符串替换</p>
+<p><span th:text="'Welcome to our application, ' + ${hello} + '!'"></span></p>
+</body>
+</html>
