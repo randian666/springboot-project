@@ -34,6 +34,10 @@ public class ConsumerController {
         return computeClient.subtractClient(a,b);
     }
 
+    /**
+     * discoveryClient方式消费
+     * @return
+     */
     @RequestMapping(value = "/testDiscovery", method = RequestMethod.GET)
     public String testDiscovery() {
         List<ServiceInstance> list = discoveryClient.getInstances("compute-service");

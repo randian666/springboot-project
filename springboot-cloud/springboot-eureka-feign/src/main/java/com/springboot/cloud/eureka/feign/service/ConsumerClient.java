@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 /**
- * 消费者服务
+ * FeignClient消费者服务
  * Created by liuxun on 2017/4/17.
  */
 @FeignClient(value = "${spring.application.topic}",fallback = ComputeClientHystrix.class)
