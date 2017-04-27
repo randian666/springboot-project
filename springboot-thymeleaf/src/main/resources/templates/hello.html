@@ -11,5 +11,57 @@
 <p><a th:href="@{http://www.baidu.com}">引入url</a></p>
 <p>3.字符串替换</p>
 <p><span th:text="'Welcome to our application, ' + ${hello} + '!'"></span></p>
+<p>4.list遍历以及非空校验</p>
+<p th:if="${not #lists.isEmpty(listIds)}">
+    <table>
+        <tr th:each="str:${listIds}">
+            <td th:text="${str}"></td>
+        </tr>
+    </table>
+</p>
+<p>4.访问model</p>
+<p th:text="'姓名:'+${user.name}+''">
+</p>
+
+<p>5.逻辑判断</p>
+<p th:if="${user.age} &lt; 18">
+    <span th:text="''+${user.name}+'是未成年人'"></span>
+</p>
+<p>6.内置dates</p>
+<p th:text="'当前时间格式化为：'+${#dates.format(currDate,'yyyy年MM月dd日 HH:mm:ss')}+''">
+</p>
+<p th:text="'创建一个当前时间：'+${#dates.createNow()}+''">
+</p>
+
+<p>7.内置strings</p>
+<p th:text="'名字是否为空：'+${#strings.isEmpty(user.name)}+''">
+</p>
+<p th:text="'名字长度：'+${#strings.length(user.name)}+''">
+</p>
+
+<p>8.switch用法</p>
+<p th:switch="${user.name}">
+    <p th:case="'张三'">哟，你是张小三</p>
+    <p th:case="'李四'">哟，你是李小四</p>
+    <p th:case="'刘勋'">哟，你是勋哥</p>
+    <p th:case="'*'">哟，你是谁啊</p>
+</p>
+<p>9.运算符 在表达式中可以使用各类算术运算符，例如+, -, *, /, %</p>
+<p th:with="isEven=(${user.age} % 2 == 0)">
+    <span th:text="'当前年龄是否能被2整除：'+${isEven}+''"></span>
+</p>
+<p th:with="isEven=(${user.age}-6)">
+    <span th:text="'当前年龄减去6岁：'+${isEven}+''"></span>
+</p>
+
+10.为了模板更加易用，Thymeleaf还提供了一系列Utility对象（内置于Context中），可以通过#直接访问：
+#dates
+#calendars
+#numbers
+#strings
+arrays
+lists
+sets
+maps
 </body>
 </html>
