@@ -16,6 +16,7 @@
         <module>springboot-security</module>
         <module>springboot-cloud</module>
         <module>springboot-thymeleaf</module>
+        <module>springboot-lombok</module>
     </modules>
 
 
