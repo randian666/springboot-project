@@ -22,7 +22,7 @@ public class Hello {
     @RequestMapping("/hello")
     @ResponseBody
     public String hello(){
-        
+
         List<Info> list = infoService.getAll();
         String json = JSON.toJSONString(list);
         return json;

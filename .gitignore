@@ -1,0 +1,15 @@
+# maven输出目录
+target/
+# eclipse工程文件
+.classpath
+.settings/
+.project
+# IDEA工程文件
+.idea/
+*.iml
+# SVN控制目录
+.svn/
+# 备份文件
+*.bak
+
+/bin

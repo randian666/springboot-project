@@ -17,6 +17,7 @@
         <module>springboot-cloud</module>
         <module>springboot-thymeleaf</module>
         <module>springboot-lombok</module>
+        <module>springboot-bootstrap</module>
     </modules>
 
 
