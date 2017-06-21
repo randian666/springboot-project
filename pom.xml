@@ -18,6 +18,7 @@
         <module>springboot-thymeleaf</module>
         <module>springboot-lombok</module>
         <module>springboot-bootstrap</module>
+        <module>springboot-profile</module>
     </modules>
 
 
