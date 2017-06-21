@@ -19,6 +19,7 @@
         <module>springboot-lombok</module>
         <module>springboot-bootstrap</module>
         <module>springboot-profile</module>
+        <module>springboot-freemarker</module>
     </modules>
 
 
