@@ -35,7 +35,8 @@ public class Hello {
     }
 
     @RequestMapping("/view")
-    public String helloThy(Map<String,Object> map){
+    public String helloThy(Map<String,Object> map) {
+
         return"/hello";
     }
 

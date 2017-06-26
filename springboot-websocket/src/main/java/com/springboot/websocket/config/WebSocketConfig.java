@@ -7,7 +7,7 @@ import org.springframework.web.socket.config.annotation.EnableWebSocketMessageBr
 import org.springframework.web.socket.config.annotation.StompEndpointRegistry;
 
 /**
- * WebSocket广播式 并通过继承AbstractWebSocketMessageBrokerConfigurer重写方法配置websocket
+ * WebSocket广播式 @EnableWebSocketMessageBroker注解表示开启使用STOMP协议来传输基于代理的消息
  * 1、@EnableWebSocketMessageBroker 注解开启使用STOMP协议来传输基于代理（message broker）的消息，这时控制器支持使用@MessageMapping。
  * 2、注册STOMP协议的节点（endpoint），并且映射指定的URL
  * 3、注册一个STOMP的endpoint，并指定使用SockJS协议
