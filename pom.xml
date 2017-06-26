@@ -20,6 +20,7 @@
         <module>springboot-bootstrap</module>
         <module>springboot-profile</module>
         <module>springboot-freemarker</module>
+        <module>springboot-websocket</module>
     </modules>
 
 

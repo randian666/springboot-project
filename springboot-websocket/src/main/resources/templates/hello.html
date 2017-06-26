@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>SpringBoot WebSocket 广播式</title>
+</head>
+<body>
+<div>
+    <button id="connect" onclick="connect();">连接</button>
+    <button id="disconnect" onclick="disconnect();">断开连接</button>
+    <br/>
+    输入你的名字：
+    <input type="text" id="name"/>  <button id="sendName" onclick="sendName();">发送</button>
+    <p id="response"></p>
+</div>
+<script th:src="@{js/jquery-3.2.1.min.js}"></script>
+<script th:src="@{js/sockjs.min.js}"></script>
+<script th:src="@{js/stomp.min.js}"></script>
+<script>
+    var stompClient=null;
+    $(function(){
+        disconnect();
+    })
+    function disconnect(){
+        if (stompClient!=null){
+            stompClient.disconnect();
+        }
+        setConnected(false);
+        console.log("disconnect")
+    }
+    function setConnected(connected){
+        $("#connect").attr({"disabled":connected});
+        $("#disconnect").attr({"disabled":!connected});
+        $("#response").html();
+    }
+
+    function connect(){
+        var socket=new SockJS('/endpointWisely');//连接SockJS的endpoint名称为/endpointWisely
+        stompClient=Stomp.over(socket);//使用Stomp的子协议的WebSocket客户端
+        stompClient.connect({},function(frame){//连接WebSocket服务端
+            setConnected(true);
+            console.log("connect:"+frame);
+            stompClient.subscribe("/topic/getResponse",function(response){//订阅目标消息 SendTo定义
+                $("#response").html(response.body);
+            })
+        })
+    }
+    //发送消息
+    function sendName(){
+        var name=$("#name").val();
+        stompClient.send("/say",{},JSON.stringify({'message':name}));
+    }
+</script>
+</body>
+</html>
