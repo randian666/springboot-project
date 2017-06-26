@@ -27,6 +27,12 @@ public class Hello {
         return "hello boot";
     }
 
+    /**
+     * 当服务端有消息时，会对订阅@SendTo中的路径的浏览器发送消息
+     * @param message
+     * @return
+     * @throws InterruptedException
+     */
     @MessageMapping("/say")
     @SendTo("/topic/getResponse")
     public WiselyResponse say(WiselyMessage message) throws InterruptedException {
@@ -34,6 +40,11 @@ public class Hello {
         return new WiselyResponse("hello,"+message.getMessage());
     }
 
+    /**
+     * 广播式消息-页面
+     * @param map
+     * @return
+     */
     @RequestMapping("/view")
     public String helloThy(Map<String,Object> map) {
 
