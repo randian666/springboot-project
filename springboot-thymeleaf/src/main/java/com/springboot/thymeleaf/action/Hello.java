@@ -35,7 +35,7 @@ public class Hello {
         map.put("listIds",list);
         User u=new User();
         u.setId(1);
-        u.setAge(12);
+//        u.setAge(12);
         u.setName("刘勋");
         u.setRemark("hello boot");
         map.put("user",u);

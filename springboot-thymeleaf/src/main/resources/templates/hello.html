@@ -2,6 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Hello World!</title>
+    <script  th:src="@{//misc.360buyimg.com/jdf/??lib/jquery-1.6.4.js}"></script>
 </head>
 <body>
 <h1 th:inline="text">Hello.v.2</h1>
@@ -27,6 +28,9 @@
 <p th:if="${user.age} &lt; 18">
     <span th:text="''+${user.name}+'是未成年人'"></span>
 </p>
+<textarea id="content" rows="5" th:if="${#strings.isEmpty(user.name)} == false" th:text="${user.name}"></textarea>
+<textarea id="content" rows="5" th:if="${#strings.isEmpty(user.name)} == true"> 愿一切最美好的祝福都能用这份礼物表达，真诚地祝你快乐~</textarea>
+
 <p>6.内置dates</p>
 <p th:text="'当前时间格式化为：'+${#dates.format(currDate,'yyyy年MM月dd日 HH:mm:ss')}+''">
 </p>
@@ -36,7 +40,7 @@
 <p>7.内置strings</p>
 <p th:text="'名字是否为空：'+${#strings.isEmpty(user.name)}+''">
 </p>
-<p th:text="'名字长度：'+${#strings.length(user.name)}+''">
+<p th:if="${#strings.isEmpty(user.name)} == false" th:text="'名字长度：'+${#strings.length(user.name)}+''">
 </p>
 
 <p>8.switch用法</p>
