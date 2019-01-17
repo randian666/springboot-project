@@ -1,5 +1,7 @@
 package com.springboot.dubbo.consume.action;
 
+import com.alibaba.dubbo.config.annotation.Reference;
+import com.springboot.dubbo.service.HelloService;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -9,6 +11,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class Hello {
 
+    @Reference(version = "1.0.0")
+    HelloService helloService;
+
     @RequestMapping("/hello")
     public String hello(){
         return "hello boot";
@@ -16,6 +21,6 @@ public class Hello {
 
     @RequestMapping("/sendMsg")
     public String welcome(String name) {
-        return "hello "+name;
+        return helloService.sayHello(name);
     }
 }

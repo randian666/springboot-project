@@ -11,11 +11,19 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>springboot-dubbo-consume</artifactId>
-
+    <properties>
+        <zookeeper.version>3.4.13</zookeeper.version>
+    </properties>
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.apache.logging.log4j</groupId>
+                    <artifactId>log4j-to-slf4j</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -32,6 +40,16 @@
             <groupId>com.alibaba.boot</groupId>
             <artifactId>dubbo-spring-boot-starter</artifactId>
             <version>0.2.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.zookeeper</groupId>
+            <artifactId>zookeeper</artifactId>
+            <version>${zookeeper.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springboot</groupId>
+            <artifactId>springboot-dubbo-service</artifactId>
+            <version>1.0-SNAPSHOT</version>
         </dependency>
     </dependencies>
 </project>
