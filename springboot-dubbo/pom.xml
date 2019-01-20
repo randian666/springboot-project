@@ -14,7 +14,6 @@
     <modules>
         <module>springboot-dubbo-server</module>
         <module>springboot-dubbo-consume</module>
-        <module>springboot-dubbo-interface</module>
         <module>springboot-dubbo-service</module>
     </modules>
 

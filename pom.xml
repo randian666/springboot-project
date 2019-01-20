@@ -21,6 +21,8 @@
         <module>springboot-freemarker</module>
         <module>springboot-websocket</module>
         <module>springboot-dubbo</module>
+        <module>springboot-aop</module>
+
     </modules>
 
 
