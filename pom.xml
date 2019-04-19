@@ -22,6 +22,7 @@
         <module>springboot-websocket</module>
         <module>springboot-dubbo</module>
         <module>springboot-aop</module>
+        <module>springboot-sharding-jdbc</module>
 
     </modules>
 
