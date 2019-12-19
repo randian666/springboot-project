@@ -1,4 +1,4 @@
-package com.springboot.upload.config;
+package com.springboot.mybatisplus.config;
 
 import org.springframework.boot.web.servlet.MultipartConfigFactory;
 import org.springframework.context.annotation.Bean;

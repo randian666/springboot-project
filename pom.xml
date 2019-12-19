@@ -23,7 +23,7 @@
         <module>springboot-dubbo</module>
         <module>springboot-aop</module>
         <module>springboot-sharding-jdbc</module>
-
+        <module>springboot-mybatisplus</module>
     </modules>
 
 
