@@ -20,14 +20,14 @@ import java.util.function.Consumer;
 
 /**
  * @author xun2.liu
- * @title: SampleTest
+ * @title: SelectTest
  * @projectName springboot-project
  * @description: mybatisplus测试
  * @date 2019/12/19 19:54
  */
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class SampleTest {
+public class SelectTest {
     @Autowired
     private UserMapper userMapper;
 
