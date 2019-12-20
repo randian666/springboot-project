@@ -15,6 +15,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.function.Consumer;
 
 /**
  * @author xun2.liu
@@ -82,5 +83,18 @@ public class SampleTest {
         userList.forEach(System.out::println);
     }
 
+    /**
+     * 通过条件查询
+     */
+    @Test
+    public void testSelectByQueryWrapper3() {
+        System.out.println(("----- testSelectByQueryWrapper2 method test ------"));
+        //name like '张%' or (age>12 and age<30 and email is not null)
+        QueryWrapper<User> query=new QueryWrapper<>();
+        query.likeRight("name","张")
+             .or(wq->wq.ge("age",12).le("age",30).isNotNull("email"));
+        List<User> userList = userMapper.selectList(query);
+        userList.forEach(System.out::println);
+    }
 
 }
