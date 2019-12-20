@@ -81,4 +81,6 @@ public class SampleTest {
         List<User> userList = userMapper.selectList(query);
         userList.forEach(System.out::println);
     }
+
+
 }
