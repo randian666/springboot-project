@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -88,13 +89,43 @@ public class SampleTest {
      */
     @Test
     public void testSelectByQueryWrapper3() {
-        System.out.println(("----- testSelectByQueryWrapper2 method test ------"));
+        System.out.println(("----- testSelectByQueryWrapper3 method test ------"));
         //name like '张%' or (age>12 and age<30 and email is not null)
+//        QueryWrapper<User> query=new QueryWrapper<>();
+//        query.likeRight("name","张")
+//             .or(wq->wq.ge("age",12).le("age",30).isNotNull("email"));
+
+        //(age>12 and age<30 and email is not null) and name like '张%'
         QueryWrapper<User> query=new QueryWrapper<>();
-        query.likeRight("name","张")
-             .or(wq->wq.ge("age",12).le("age",30).isNotNull("email"));
+        query.nested(wq->wq.ge("age",12).le("age",30).isNotNull("email"))
+                .likeRight("name","张");
         List<User> userList = userMapper.selectList(query);
         userList.forEach(System.out::println);
     }
 
+    /**
+     * 通过条件查询
+     */
+    @Test
+    public void testSelectByQueryWrapper4() {
+        System.out.println(("----- testSelectByQueryWrapper4 method test ------"));
+        //age in (12,13,30)
+        QueryWrapper<User> query=new QueryWrapper<>();
+        query.in("age", Arrays.asList(12,20,30));
+        List<User> userList = userMapper.selectList(query);
+        userList.forEach(System.out::println);
+    }
+
+    /**
+     * 通过条件查询
+     * 指定字段
+     */
+    @Test
+    public void testSelectByQueryWrapper5() {
+        System.out.println(("----- testSelectByQueryWrapper5 method test ------"));
+        QueryWrapper<User> query=new QueryWrapper<>();
+        query.select("id","name").in("age", Arrays.asList(12,20,30));
+        List<User> userList = userMapper.selectList(query);
+        userList.forEach(System.out::println);
+    }
 }
