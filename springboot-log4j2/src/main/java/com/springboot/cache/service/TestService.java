@@ -1,4 +1,4 @@
-package com.springboot.log4j2.service;
+package com.springboot.cache.service;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

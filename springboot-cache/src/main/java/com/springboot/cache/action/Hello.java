@@ -1,6 +1,6 @@
-package com.springboot.log4j2.action;
+package com.springboot.cache.action;
 
-import com.springboot.log4j2.service.TestService;
+import com.springboot.cache.service.TestService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -17,7 +17,7 @@ public class Hello {
     @RequestMapping("/hello")
     @ResponseBody
     public String hello(){
-        testService.testLog();
-        return "hello boot";
+        String result = testService.getProductByRedis();
+        return "hello boot"+result;
     }
 }
