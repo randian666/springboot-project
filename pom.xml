@@ -25,5 +25,6 @@
         <module>springboot-sharding-jdbc</module>
         <module>springboot-mybatisplus</module>
         <module>springboot-cache</module>
+        <module>springboot-selenium</module>
     </modules>
 </project>
