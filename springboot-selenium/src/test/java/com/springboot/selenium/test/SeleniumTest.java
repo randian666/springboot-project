@@ -154,6 +154,7 @@ public class SeleniumTest {
     @Test
     public void test5() throws InterruptedException {
         WebDriver.Navigation navigate = driver.navigate();
+//        String path =  this.getClass().getClassLoader().getResource("").getPath()+"static/alert.html";
         navigate.to("D:\\temp\\alert.html");
 
         WebElement btnAlert = driver.findElement(By.xpath("//input[1]"));
